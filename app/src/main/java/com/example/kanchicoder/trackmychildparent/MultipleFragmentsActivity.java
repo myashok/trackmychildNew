@@ -27,7 +27,7 @@ public class MultipleFragmentsActivity extends FragmentActivity {
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
 
-        private final String[] TITLES = { "Categories", "Home", "Top Paid"};
+        private final String[] TITLES = { "Current Details", "Expected Schedule", "Previous Logs"};
 
         public MyPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -38,8 +38,7 @@ public class MultipleFragmentsActivity extends FragmentActivity {
             switch(pos) {
                 case 0: return new FirstFragment();
                 case 1: return new SecondFragment();
-                case 2: return  new SecondFragment();               // case 3: return ThirdFragment.newInstance("ThirdFragment, Instance 2");
-               // case 4: return ThirdFragment.newInstance("ThirdFragment, Instance 3");
+                case 2: return  new ThirdFragment();
                 default: return  new SecondFragment();
             }
         }
