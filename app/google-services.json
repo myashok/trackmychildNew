@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "500501660897",
+    "firebase_url": "https://track-my-child.firebaseio.com",
+    "project_id": "track-my-child",
+    "storage_bucket": "track-my-child.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500501660897:android:e785bf4681b78370",
+        "android_client_info": {
+          "package_name": "com.nikhilranjan.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500501660897-4clgljrj0kdakppr5i5u01iicqec93ne.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nikhilranjan.myapplication",
+            "certificate_hash": "218ABA892553797F076E49A77B8A29152625A58B"
+          }
+        },
+        {
+          "client_id": "500501660897-nlgur04j0r23rfbtmthp4bfjkbdrgv6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYeLSx4WKgwyRRe501rQgRVfl3hTNI7t8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500501660897-nlgur04j0r23rfbtmthp4bfjkbdrgv6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500501660897:android:5b097c916922ac97",
+        "android_client_info": {
+          "package_name": "com.example.kanchicoder.trackmychildparent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500501660897-1dldrlkbl8r5i00ka98lpa3oa5dcn82t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kanchicoder.trackmychildparent",
+            "certificate_hash": "F8BBE2E98188B73516AC2C211077E3C5D0F260AE"
+          }
+        },
+        {
+          "client_id": "500501660897-nlgur04j0r23rfbtmthp4bfjkbdrgv6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYeLSx4WKgwyRRe501rQgRVfl3hTNI7t8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500501660897-nlgur04j0r23rfbtmthp4bfjkbdrgv6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

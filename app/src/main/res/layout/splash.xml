@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/splashCoordinatorLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/splash_background">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/logo"
+            android:elevation="2dp"
+            android:id="@+id/splash_logo_imageview"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/designed_app_name"
+            android:layout_below="@id/splash_logo_imageview"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@android:color/white"
+            android:id="@+id/splash_app_name_textView"/>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
