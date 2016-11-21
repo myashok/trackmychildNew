@@ -2,6 +2,7 @@ package com.example.kanchicoder.trackmychildparent;
 
 import android.content.Context;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,11 +88,9 @@ public class CustomAdapter extends ArrayAdapter<Student> implements View.OnClick
 
         viewHolder.studentNameTv.setText(student.getStudentName());
         viewHolder.schoolNameTv.setText(student.getSchoolName());
+        //Log.i("id", student.getStudentPhoto());
+        Log.i("id", "https://trackmychild.000webhostapp.com/Images/studentImages/"+student.getStudentPhoto()+".jpg");
         Glide.with(mContext).load("https://trackmychild.000webhostapp.com/Images/studentImages/"+student.getStudentPhoto()+".jpg").placeholder(R.drawable.logo).into(viewHolder.studentPhotoIv);
-    //    Picasso.with(getContext()).load("https://image.tmdb.org/t/p/w185/"+movieImage.posterLink).into(image);
-        // Return the completed view to render on screen
-
-
         return convertView;
     }
 }

@@ -3,6 +3,7 @@ package com.example.kanchicoder.trackmychildparent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -71,10 +72,11 @@ public class MainActivity extends AppCompatActivity{
     private void addDatafromInternet(final String uid) {
         requestQueue = Volley.newRequestQueue(this);
         // String name[]
-        request = new StringRequest(Request.Method.POST, URL+"?parent="+uid, new Response.Listener<String>() {
+        request = new StringRequest(Request.Method.GET, URL+"?parent="+uid, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
+                    Log.i("response", response);
                     JSONArray array = new JSONArray(response);
                     size = 0;
                     for(int i = 0; i < array.length(); ++i) {
@@ -98,14 +100,7 @@ public class MainActivity extends AppCompatActivity{
             @Override
             public void onErrorResponse(VolleyError error) {
             }
-        }){
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                HashMap<String,String> hashMap = new HashMap<>();
-                hashMap.put("uid",uid);
-                return hashMap;
-            }
-        };
+        });
         requestQueue.add(request);
     }
 
