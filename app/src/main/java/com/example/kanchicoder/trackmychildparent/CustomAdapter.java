@@ -1,7 +1,9 @@
 package com.example.kanchicoder.trackmychildparent;
 
 import android.content.Context;
+import android.graphics.Movie;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,11 +17,13 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import static android.R.attr.y;
 
 /**
  * Created by FamilyAngel on 11/8/2016.
  */
-
 public class CustomAdapter extends ArrayAdapter<Student> implements View.OnClickListener{
 
     private ArrayList<Student> dataSet;
