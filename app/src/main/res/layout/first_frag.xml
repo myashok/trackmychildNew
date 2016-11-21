@@ -1,11 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/soleViewMap"
+<ScrollView android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" >
 
-</RelativeLayout>
+        <com.google.android.gms.maps.MapView
+            android:layout_alignParentTop="true"
+            android:id="@+id/soleViewMap"
+            android:layout_width="wrap_content"
+            android:layout_height="260dp"/>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_below="@id/soleViewMap"
+            android:background="#c0c0c0"
+            android:layout_width = "match_parent"
+            android:layout_height="1dp"/>
+
+        <ImageView
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/line1"
+            android:id="@+id/busImage1"
+            android:layout_height="100dp"
+            android:layout_width="100dp"
+            android:src="@drawable/bus" />
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginLeft="6dp"
+            android:layout_below="@id/line1"
+            android:layout_toRightOf="@id/busImage1"
+            android:id="@+id/busNoTag"
+            android:text="Bus No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/busImage1"
+            android:layout_below="@id/busNoTag"
+            android:id="@+id/busId"
+            android:text="xyx 15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:id="@+id/line3"
+            android:layout_below="@id/busImage1"
+            android:background="#c0c0c0"
+            android:layout_width = "match_parent"
+            android:layout_height="1dp"/>
+
+        <ImageView
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/line3"
+            android:id="@+id/busImage2"
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:src="@drawable/bus" />
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginLeft="6dp"
+            android:id="@+id/driverNameTag"
+            android:layout_below="@id/line3"
+            android:layout_toRightOf="@id/busImage2"
+            android:text="Driver Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginLeft="6dp"
+            android:id="@+id/driverName"
+            android:layout_below="@id/driverNameTag"
+            android:layout_toRightOf="@id/busImage2"
+            android:text="ljjdlkdsj lkjd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:id="@+id/line4"
+            android:layout_below="@id/busImage2"
+            android:background="#c0c0c0"
+            android:layout_width = "match_parent"
+            android:layout_height="1dp"/>
+
+        <ImageView
+            android:layout_below="@id/line4"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/busImage3"
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:src="@drawable/bus" />
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginLeft="6dp"
+            android:id="@+id/conductorNameTag"
+            android:layout_toRightOf="@id/busImage3"
+            android:layout_below="@id/line4"
+            android:text="Conductor Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/busImage3"
+            android:layout_below="@id/conductorNameTag"
+            android:text="lkfkljsd klfjlsdj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+</ScrollView>
