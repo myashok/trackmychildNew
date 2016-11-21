@@ -1,6 +1,7 @@
 package com.example.kanchicoder.trackmychildparent;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -8,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.astuetz.PagerSlidingTabStrip;
 
@@ -37,6 +39,20 @@ public class MultipleFragmentsActivity extends ActionBarActivity{
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+
+    public void callConductor(View view){
+        Intent i = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "0" + view.findViewById(R.id.conductorContact)));
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
+    }
+
+    public void callDriver(View view){
+        Intent i = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "0" + view.findViewById(R.id.driverContact)));
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
     }
 
     @Override

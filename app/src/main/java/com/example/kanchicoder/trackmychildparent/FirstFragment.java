@@ -68,6 +68,8 @@ public class FirstFragment extends Fragment {
         return rootView;
     }
 
+
+
     @Override
     public void onResume() {
         super.onResume();

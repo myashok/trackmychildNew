@@ -81,6 +81,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <TextView
+            android:layout_marginLeft="6dp"
+            android:id="@+id/driverContact"
+            android:layout_below="@id/driverName"
+            android:layout_toRightOf="@id/busImage2"
+            android:text="ljjdlkdsj lkjd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:onClick="callDriver"
+            android:layout_margin="5dp"
+            android:layout_below="@id/driverContact"
+            android:layout_toRightOf="@id/busImage2"
+            android:src="@drawable/call"
+            android:id="@+id/conductorCall"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
         <View
             android:id="@+id/line4"
             android:layout_below="@id/busImage2"
@@ -107,12 +126,32 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            android:id="@+id/conductorName"
             android:layout_marginLeft="6dp"
             android:layout_toRightOf="@id/busImage3"
             android:layout_below="@id/conductorNameTag"
             android:text="lkfkljsd klfjlsdj"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/conductorContact"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/busImage3"
+            android:layout_below="@id/conductorName"
+            android:text="lkfkljsd klfjlsdj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:onClick="callConductor"
+            android:layout_margin="5dp"
+            android:layout_below="@id/conductorContact"
+            android:layout_toRightOf="@id/busImage3"
+            android:src="@drawable/call"
+            android:id="@+id/driverCall"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
 
     </RelativeLayout>
 </ScrollView>
