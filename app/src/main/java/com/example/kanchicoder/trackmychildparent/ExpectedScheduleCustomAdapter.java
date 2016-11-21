@@ -68,7 +68,7 @@ public class ExpectedScheduleCustomAdapter extends ArrayAdapter<ExpectedSchedule
         lastPosition = position;
 
         viewHolder.busIdTv.setText(expectedSchedule.getBusId());
-        viewHolder.busStopIdTv.setText(expectedSchedule.getBusStopId());
+        viewHolder.busStopIdTv.setText(expectedSchedule.getBusStopName());
         viewHolder.arrivalTimeTv.setText(expectedSchedule.getArrivalTime());
         viewHolder.departureTimeTv.setText(expectedSchedule.getDepartureTime());
 

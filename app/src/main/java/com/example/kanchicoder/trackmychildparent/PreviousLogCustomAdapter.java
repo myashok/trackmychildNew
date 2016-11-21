@@ -22,7 +22,6 @@ public class PreviousLogCustomAdapter extends ArrayAdapter<PreviousLog> {
 
     // View lookup cache
     private static class ViewHolder {
-        TextView studentIdTv;
         TextView busIdTv;
         TextView startBusStopIdTv;
         TextView endBusStopIdTv;
@@ -52,7 +51,6 @@ public class PreviousLogCustomAdapter extends ArrayAdapter<PreviousLog> {
             viewHolder = new PreviousLogCustomAdapter.ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
             convertView = inflater.inflate(R.layout.previous_list_layout, parent, false);
-            viewHolder.studentIdTv = (TextView) convertView.findViewById(R.id.studentId);
             viewHolder.busIdTv = (TextView) convertView.findViewById(R.id.busId);
             viewHolder.startBusStopIdTv = (TextView) convertView.findViewById(R.id.startBusStopId);
             viewHolder.endBusStopIdTv = (TextView) convertView.findViewById(R.id.endBusStopId);
@@ -71,10 +69,10 @@ public class PreviousLogCustomAdapter extends ArrayAdapter<PreviousLog> {
         result.startAnimation(animation);
         lastPosition = position;
 
-        viewHolder.studentIdTv.setText(previousLog.getStudentId());
+
         viewHolder.busIdTv.setText(previousLog.getBusId());
-        viewHolder.startBusStopIdTv.setText(previousLog.getStartBusStopId());
-        viewHolder.endBusStopIdTv.setText(previousLog.getEndBusStopId());
+        viewHolder.startBusStopIdTv.setText(previousLog.getStartBusStopName());
+        viewHolder.endBusStopIdTv.setText(previousLog.getEndBusStopName());
         viewHolder.startTimeTv.setText(previousLog.getStartTime());
         viewHolder.endTimeTv.setText(previousLog.getEndTime());
 

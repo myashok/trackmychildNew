@@ -5,30 +5,26 @@ package com.example.kanchicoder.trackmychildparent;
  */
 
 public class PreviousLog {
-    private String studentId, busId, startBusStopId, endBusStopId, startTime, endTime;
+    private String busId, startBusStopName, endBusStopName, startTime, endTime;
 
 
-    public PreviousLog(String studentId, String busId, String startBusStopId,
-                       String endBusStopId, String startTime, String endTime) {
-        this.studentId=studentId;
+    public PreviousLog(String busId, String startBusStopName,
+                       String endBusStopName, String startTime, String endTime) {
         this.busId=busId;
-        this.startBusStopId=startBusStopId;
-        this.endBusStopId=endBusStopId;
+        this.startBusStopName=startBusStopName;
+        this.endBusStopName=endBusStopName;
         this.startTime=startTime;
         this.endTime=endTime;
     }
 
-    public String getStudentId(){
-        return studentId;
-    }
     public String getBusId(){
         return busId;
     }
-    public String getStartBusStopId(){
-        return startBusStopId;
+    public String getStartBusStopName(){
+        return startBusStopName;
     }
-    public String getEndBusStopId(){
-        return endBusStopId;
+    public String getEndBusStopName(){
+        return endBusStopName;
     }
     public String getStartTime(){
         return startTime;

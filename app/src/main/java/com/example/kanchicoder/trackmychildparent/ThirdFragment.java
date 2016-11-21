@@ -30,10 +30,10 @@ public class ThirdFragment extends Fragment {
     private ListView listView;
 
 
-    private String[] studentId = new String[100];
+
     private String[] busId = new String[100];
-    private String[] startBusStopId = new String[100];
-    private String[] endBusStopId = new String[100];
+    private String[] startBusStopName = new String[100];
+    private String[] endBusStopName = new String[100];
     private String[] startTime = new String[100];
     private String[] endTime = new String[100];
     private int size = 0;
@@ -42,6 +42,8 @@ public class ThirdFragment extends Fragment {
     // private static String uid;
     //ListView listView;
     private static PreviousLogCustomAdapter adapter;
+    MultipleFragmentsActivity activity;
+    private String stuId;
 
     private static final String TAG = "MainActivity";
 
@@ -52,6 +54,8 @@ public class ThirdFragment extends Fragment {
         listView = (ListView) v.findViewById(R.id.previousLogListView);
 
         //sendRequest();
+        activity=(MultipleFragmentsActivity)getActivity();
+        stuId=activity.student.getStudentPhoto();
 
 
         //listView=(ListView)findViewById(R.id.list);
@@ -65,7 +69,7 @@ public class ThirdFragment extends Fragment {
     }
 
     private void addDatafromInternet() {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL+"?student="+stuId, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -74,17 +78,16 @@ public class ThirdFragment extends Fragment {
                     size = 0;
                     for (int i = 0; i < array.length(); ++i) {
                         JSONObject nsonobject = array.getJSONObject(i);
-                        studentId[i] = nsonobject.getString("student_id");
                         busId[i] = nsonobject.getString("bus_id");
-                        startBusStopId[i] = nsonobject.getString("start_bus_stop_id");
-                        endBusStopId[i] = nsonobject.getString("end_bus_stop_id");
+                        startBusStopName[i] = nsonobject.getString("start_bus_stop_name");
+                        endBusStopName[i] = nsonobject.getString("end_bus_stop_name");
                         startTime[i] = nsonobject.getString("start_time");
                         endTime[i] = nsonobject.getString("end_time");
                         size = size + 1;
                     }
                     dataModels.clear();
                     for (int i = 0; i < size; ++i) {
-                        dataModels.add(new PreviousLog(studentId[i], busId[i], startBusStopId[i], endBusStopId[i], startTime[i], endTime[i]));
+                        dataModels.add(new PreviousLog(busId[i], startBusStopName[i], endBusStopName[i], startTime[i], endTime[i]));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
