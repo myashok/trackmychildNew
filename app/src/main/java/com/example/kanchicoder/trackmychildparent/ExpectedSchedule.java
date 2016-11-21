@@ -5,12 +5,12 @@ package com.example.kanchicoder.trackmychildparent;
  */
 
 public class ExpectedSchedule {
-    private String busId, busStopId, arrivalTime, departureTime;
+    private String busId, busStopName, arrivalTime, departureTime;
 
 
-    public ExpectedSchedule(String busId, String busStopId, String arrivalTime, String departureTime) {
+    public ExpectedSchedule(String busId, String busStopName, String arrivalTime, String departureTime) {
         this.busId=busId;
-        this.busStopId=busStopId;
+        this.busStopName=busStopName;
         this.arrivalTime=arrivalTime;
         this.departureTime=departureTime;
     }
@@ -18,8 +18,8 @@ public class ExpectedSchedule {
     public String getBusId(){
         return busId;
     }
-    public String getBusStopId(){
-        return busStopId;
+    public String getBusStopName(){
+        return busStopName;
     }
     public String getArrivalTime(){
         return arrivalTime;

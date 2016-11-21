@@ -13,10 +13,13 @@ import com.astuetz.PagerSlidingTabStrip;
  */
 public class MultipleFragmentsActivity extends FragmentActivity {
 
+    public Student student;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.multiple_fragments);
+        student = (Student)getIntent().getSerializableExtra("student");
         ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         pager.setOffscreenPageLimit(3);

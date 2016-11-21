@@ -30,12 +30,14 @@ public class SecondFragment extends Fragment {
     //public static final String JSON_URL = "http://172.19.18.22/login_register/expected_time.php";
 
     private ListView listView;
+    private String orgNo;
 
 
     private String[] busId = new String[100];
-    private String[] busStopId = new String[100];
+    private String[] busStopName = new String[100];
     private String[] arrivalTime = new String[100];
     private String[] departureTime = new String[100];
+    MultipleFragmentsActivity activity;
     private int size = 0;
     private static final String URL = "https://trackmychild.000webhostapp.com/trackmychild/expected_time.php";
     ArrayList<ExpectedSchedule> dataModels;
@@ -52,7 +54,8 @@ public class SecondFragment extends Fragment {
         listView = (ListView) v.findViewById(R.id.scheduleListView);
 
         //sendRequest();
-
+        activity=(MultipleFragmentsActivity) getActivity();
+        orgNo=activity.student.getOrgNo();
 
         //listView=(ListView)findViewById(R.id.list);
         dataModels = new ArrayList<>();
@@ -65,7 +68,7 @@ public class SecondFragment extends Fragment {
     }
 
     private void addDatafromInternet() {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL+"?org="+orgNo, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -75,14 +78,14 @@ public class SecondFragment extends Fragment {
                     for (int i = 0; i < array.length(); ++i) {
                         JSONObject nsonobject = array.getJSONObject(i);
                         busId[i] = nsonobject.getString("bus_id");
-                        busStopId[i] = nsonobject.getString("bus_stop_id");
+                        busStopName[i] = nsonobject.getString("common_name");
                         arrivalTime[i] = nsonobject.getString("arrival_time");
                         departureTime[i] = nsonobject.getString("departure_time");
                         size = size + 1;
                     }
                     dataModels.clear();
                     for (int i = 0; i < size; ++i) {
-                        dataModels.add(new ExpectedSchedule(busId[i], busStopId[i], arrivalTime[i], departureTime[i]));
+                        dataModels.add(new ExpectedSchedule(busId[i], busStopName[i], arrivalTime[i], departureTime[i]));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
