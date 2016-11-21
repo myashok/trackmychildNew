@@ -1,28 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/bus"
+        android:id="@+id/busImage"
+        android:layout_width="60dp"
+        android:layout_height="60dp" />
+
     <TextView
+        android:textStyle="bold"
+        android:layout_marginLeft="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/busImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/busId" />
     <TextView
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/busStopName" />
     <TextView
+        android:textStyle="bold"
+        android:id="@+id/arrivalText"
+        android:layout_below="@id/busStopName"
+        android:layout_toRightOf="@id/busImage"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arrival: " />
+    <TextView
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/busStopName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/arrivalTime" />
+    <TextView
+        android:textStyle="bold"
+        android:layout_below="@id/arrivalText"
+        android:layout_toRightOf="@id/busImage"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Departure: " />
 
     <TextView
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/arrivalTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/departureTime" />
 
-</LinearLayout>
+</RelativeLayout>

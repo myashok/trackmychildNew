@@ -1,19 +1,43 @@
 package com.example.kanchicoder.trackmychildparent;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.astuetz.PagerSlidingTabStrip;
 
 /**
  * Created by FamilyAngel on 11/8/2016.
  */
-public class MultipleFragmentsActivity extends FragmentActivity {
+public class MultipleFragmentsActivity extends ActionBarActivity{
 
     public Student student;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_logout) {
+            SessionManager sessionManager = new SessionManager(getApplicationContext());
+            sessionManager.logoutUser();
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +45,8 @@ public class MultipleFragmentsActivity extends FragmentActivity {
         setContentView(R.layout.multiple_fragments);
         student = (Student)getIntent().getSerializableExtra("student");
         ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
+        //getActionBar().setTitle(student.getStudentName());
+        getSupportActionBar().setTitle(student.getStudentName());
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         pager.setOffscreenPageLimit(3);
         // Bind the tabs to the ViewPager
