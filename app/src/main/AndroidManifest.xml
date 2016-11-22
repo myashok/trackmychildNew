@@ -27,16 +27,17 @@
         </activity>
         <activity android:name=".WelcomeActivity">
         </activity>
-        <activity android:name=".LoginActivity" android:theme="@style/AppTheme.Dark"
+        <activity android:name=".LoginActivity"
+            android:theme="@style/MyMaterialTheme"
             android:label="@string/title_activity_login"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_welcome"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"></activity>
+            android:theme="@style/MyMaterialTheme"></activity>
         <activity
             android:name=".MultipleFragmentsActivity"
             android:label="@string/title_activity_welcome"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"></activity>
+            android:theme="@style/MyMaterialTheme"></activity>
     </application>
 
 </manifest>

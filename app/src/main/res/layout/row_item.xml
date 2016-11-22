@@ -1,10 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:background="@android:color/white"
+    android:orientation="vertical"
     android:padding="10dp">
-
     <ImageView
         android:id="@+id/student_photo"
         android:layout_width="wrap_content"
@@ -13,21 +11,30 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:src="@android:drawable/ic_dialog_info" />
-
     <TextView
         android:id="@+id/student_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textAllCaps="true"
-        android:textColor="@android:color/black" />
-
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        />
     <TextView
         android:id="@+id/school_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textAllCaps="true"
-        android:textColor="@android:color/black" />
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"
+       />
 
 </LinearLayout>

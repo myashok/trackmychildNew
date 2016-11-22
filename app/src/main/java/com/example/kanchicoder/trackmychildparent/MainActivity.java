@@ -69,6 +69,15 @@ public class MainActivity extends AppCompatActivity{
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SessionManager sessionManager = new SessionManager(getApplicationContext());
+        if(!sessionManager.isLoggedIn()) {
+            startActivity(new Intent(this, LoginActivity.class));
+        }
+    }
+
     private void addDatafromInternet(final String uid) {
         requestQueue = Volley.newRequestQueue(this);
         // String name[]
